@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textAlignment="center"
-            android:fontFamily="@font/pressstar_regular"
+            android:fontFamily="@font/monoton"
             android:text="¡Hello XML!"
             android:lines="1"
             android:textColor="@color/white"
