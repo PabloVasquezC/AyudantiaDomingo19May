@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#353535</color>
+    <color name="blue">#0C2DE3</color>
+    <color name="purple">#A10CE3</color>
+    <color name="red">#E30C0C</color>
+    <color name="green">#0CE34E</color>
+    <color name="yellow">#E3E30C</color>
+    <color name="orange">#E38A0C</color>
+    <color name="pink">#E30C8A</color>
+    <color name="brown">#8A4C0C</color>
+    <color name="cyan">#0CE3E3</color>
+    <color name="magenta">#E30CE3</color>
+    <color name="teal">#0CE3A1</color>
+    <color name="indigo">#0C0CE3</color>
+    <color name="lime">#4CE30C</color>
+    <color name="amber">#E3A10C</color>
+    <color name="deep_orange">#E34C0C</color>
+    <color name="deep_purple">#4C0CE3</color>
+    <color name="light_blue">#0C8AE3</color>
+    <color name="light_green">#8AE30C</color>
+    <color name="light_pink">#E38A8A</color>
+    <color name="light_yellow">#E3E38A</color>
+    <color name="light_orange">#E3A18A</color>
+    <color name="light_purple">#8A0CE3</color>
+    <color name="light_cyan">#0CE3E3</color>
+    <color name="light_magenta">#E30CE3</color>
+    <color name="light_teal">#0CE3A1</color>
+    <color name="light_indigo">#0C0CE3</color>
+    <color name="light_lime">#4CE30C</color>
+    <color name="light_amber">#E3A10C</color>
+
+</resources>
