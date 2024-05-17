@@ -45,16 +45,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/button_shadow"
-            android:text="@string/start"
+            android:background="@drawable/fresh_dinamic_gradient"
+            android:text="Start"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:padding="15dp"
-            android:textAlignment="center"
-            android:textStyle="bold"
+            android:outlineAmbientShadowColor="@color/light_blue"
             />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

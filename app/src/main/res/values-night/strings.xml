@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="extensible_markup_language">(Extensible Markup Language)</string>
+    <string name="xml">XML</string>
+    <string name="hello_xml">¡Hello XML!</string>
+    <string name="start">Start</string>
+</resources>
