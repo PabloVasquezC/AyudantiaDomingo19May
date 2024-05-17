@@ -15,7 +15,7 @@
             android:name=".DescriptionActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".TypographieActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
