@@ -4,65 +4,76 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.view.View
 import android.view.animation.DecelerateInterpolator
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
-
-
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var button: Button
+    private lateinit var textView: TextView
+    private lateinit var progressBar: ProgressBar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<Button>(R.id.button)
-        val textView = findViewById<TextView>(R.id.text)
+        button = findViewById(R.id.button)
+        textView = findViewById(R.id.text)
+        progressBar = findViewById(R.id.progressBar)
 
+        // Inicialmente ocultar texto y botón
+        textView.alpha = 0f
+        button.alpha = 0f
 
-        // Create an ObjectAnimator to rotate the textView around its Y-axis.
-        val animatorY = ObjectAnimator.ofFloat(textView, "rotationY", 0f, 360f)
+        // Mostrar el ProgressBar durante 2 segundos
+        progressBar.visibility = View.VISIBLE
+        Handler().postDelayed({
+            progressBar.visibility = View.GONE
+            startAnimations()
+        }, 3000) // 2000 ms = 2 segundos
+    }
 
-        // Set the duration of the animation to 3000 milliseconds (3 seconds).
-        animatorY.duration = 3000
+    private fun startAnimations() {
+        // Animación de rotación para textView
+        val animatorY = ObjectAnimator.ofFloat(textView, "rotationY", 0f, 360f).apply {
+            duration = 3000
+            interpolator = DecelerateInterpolator()
+        }
 
-        // Set the animation to play only once. '0' means no repeats.
-        animatorY.repeatCount = 0
+        // Animación de aparición (fade-in) para textView
+        val fadeInAnimatorText = ObjectAnimator.ofFloat(textView, "alpha", 0f, 1f).apply {
+            duration = 3000
+        }
 
-        // Use a DecelerateInterpolator to slow down the animation as it comes to an end.
-        animatorY.interpolator = DecelerateInterpolator()
+        // Combinar y ejecutar animaciones de textView
+        AnimatorSet().apply {
+            playTogether(animatorY, fadeInAnimatorText)
+            start()
+        }
 
-        // Start the animation.
-        animatorY.start()
+        // Animaciones para el botón
+        val fadeInAnimatorButton = ObjectAnimator.ofFloat(button, "alpha", 0f, 1f).apply {
+            duration = 2000
+        }
+        val moveUpAnimatorButton = ObjectAnimator.ofFloat(button, "translationY", 100f, 0f).apply {
+            duration = 1000
+        }
 
-        // Create an ObjectAnimator to fade in the textView from transparent to opaque.
-        val fadeInAnimator = ObjectAnimator.ofFloat(textView, "alpha", 0f, 1f)
-        fadeInAnimator.duration = 3000  // Set the duration of the fade in animation to 3000 milliseconds.
+        // Combinar y establecer retraso para las animaciones del botón
+        AnimatorSet().apply {
+            playTogether(fadeInAnimatorButton, moveUpAnimatorButton)
+            startDelay = 3000 // Esperar a que termine la animación del texto
+            start()
+        }
 
-        fadeInAnimator.start()
-
-        // Initial position of the button (below its final position)
-        button.translationY = 70f  // Adjust this value based on your layout and preference
-
-        // ObjectAnimator for button fade in
-        val fadeInAnimatorButton = ObjectAnimator.ofFloat(button, "alpha", 0f, 1f)
-        fadeInAnimatorButton.duration = 2000
-
-        // ObjectAnimator for button move up
-        val moveUpAnimatorButton = ObjectAnimator.ofFloat(button, "translationY", 100f, 0f)  // Moves up to its final position
-        moveUpAnimatorButton.duration = 1000
-
-        // AnimatorSet to run fade in and move up animations together after a delay
-        val animatorSetButton = AnimatorSet()
-        animatorSetButton.playTogether(fadeInAnimatorButton, moveUpAnimatorButton)
-        animatorSetButton.startDelay = 3000  // Start both animations after a delay
-        animatorSetButton.start()
-
+        // Evento click para el botón
         button.setOnClickListener {
-            val intent = Intent(this, DescriptionActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, DescriptionActivity::class.java))
         }
     }
 }

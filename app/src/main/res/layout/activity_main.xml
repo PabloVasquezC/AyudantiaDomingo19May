@@ -7,6 +7,15 @@
     android:background="@drawable/black_gray_gradient"
     android:orientation="vertical">
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/first_constraint_layout"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +57,7 @@
             app:layout_constraintTop_toBottomOf="@id/text"
             app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/fresh_dinamic_gradient"

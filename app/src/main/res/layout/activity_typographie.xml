@@ -165,7 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PressStart"
-                android:textSize="10dp"
+                android:textSize="20dp"
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/pressstartd2_regular"
                 />
@@ -173,8 +173,8 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10dp"
-                android:textSize="10dp"
+                android:text="20dp"
+                android:textSize="20dp"
 
                 />
 
@@ -185,7 +185,36 @@
 
 
 
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
+            <!-- Botón Anterior -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/previous"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="80dp"
+                android:layout_height="wrap_content"
+                android:text="Previous"
+                android:textColor="@color/white_smoke"
+                android:background="@drawable/fresh_dinamic_gradient"
+                android:layout_weight="1"/>
+
+            <!-- Botón Siguiente -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_smoke"
+                android:text="Next"
+                android:background="@drawable/fresh_dinamic_gradient"
+                android:layout_weight="1"/>
+        </LinearLayout>
 
 
         </LinearLayout>

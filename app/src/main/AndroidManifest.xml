@@ -12,6 +12,20 @@
         android:theme="@style/Theme.AyudantiaDomingo19May"
         tools:targetApi="31">
         <activity
+            android:name=".WidgetsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScrollingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.AyudantiaDomingo19May.NoActionBar" />
+        <activity
+            android:name=".LayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnimationActivity"
+            android:exported="false" />
+        <activity
             android:name=".DescriptionActivity"
             android:exported="false" />
         <activity
